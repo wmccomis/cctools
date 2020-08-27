@@ -1,0 +1,10 @@
+output.txt resource_output.summary: harness.sh test1 
+	./harness.sh test1/ output.txt resource_output.summary
+
+
+perfdata.dat : resource_output.summary parsejson.py
+	python parsejson.py < resource_output.summary > perfdata.dat
+
+
+
+
